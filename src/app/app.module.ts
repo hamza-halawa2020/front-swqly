@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { JoinAsComponent } from './components/join-as/join-as.component';
 import { RegisterClientComponent } from './components/register-client/register-client.component';
 import { RegisterPartenerComponent } from './components/register-partener/register-partener.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,8 +17,14 @@ import { RegisterPartenerComponent } from './components/register-partener/regist
     RegisterClientComponent,
     RegisterPartenerComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FontAwesomeModule,
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })
+
 export class AppModule {}

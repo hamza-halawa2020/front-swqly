@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'joinas',
     component: JoinAsComponent,
   },
+  // {
+  //   path: 'test',
+  //   component: SlideComponent,
+  // },
 ];
 
 @NgModule({
