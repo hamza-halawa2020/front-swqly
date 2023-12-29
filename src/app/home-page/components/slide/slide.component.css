@@ -1,0 +1,230 @@
+img{
+    width:100%;
+}
+@media screen and (max-width: 600px) {
+    /* Styles for screens with a maximum width of 600 pixels */
+    #carouselExample{
+        height: auto !important;
+    }
+}
+ul > li{
+    font-size: 20px;
+}
+.filteration-dev{
+    border-top: solid 1px gray;
+    border-bottom: solid 1px gray;
+}
+
+/* card */
+:host {
+    --visibleItems: 3;
+    --darkBlue: #1C3879;
+    --lightBlue: #607EAA; 
+    --gray: #EAE3D2;
+    --light: #F9F5EB;
+    --navFont: 18px;
+    --headerFont: 20px;
+    --bodyFont: 16px;
+    --footerFont: 14px;
+    --navColor: #419197;
+  }
+  .bg-nav{
+    background-color: var(--navColor);
+  }
+  .text-nav{
+    color: var(--navColor);
+  }
+  div > h1{
+    border-bottom: 5px solid var(--navColor);
+    border-radius: 5px;
+  }
+  .carousel-c {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  
+  .carousel-c-inner {
+    display: flex;
+    transition: transform 0.5s;
+  }
+  
+  /* .item-container {
+    flex: 0 0 calc(100% / var(--visibleItems));
+    padding: 10px;
+    box-sizing: border-box;
+  } */
+  .item-container {
+    flex: 0 0 calc(100% / var(--visibleItems));
+    flex-basis: calc(100% / var(--visibleItems));
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .w-9{
+    width: 90%;
+  }
+  .carousel-c-controls {
+    margin-top: 10px;
+  }
+  .item-content {
+    padding: 10px;
+    height: 270px;
+  }
+  .item-content:hover {
+  box-shadow: 0 0 5px #b4b4b4;
+  }
+  .item-content img{
+    background-color: #f2f2f2;
+  }
+  
+  button {
+    margin-right: 10px;
+  }
+  .carousel-c-controls button{
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 5px #b4b4b4;
+    border: none;
+    background-color: #cef3ff;
+  }
+  .top-35{
+    top: 35%;
+  }
+  .viewbtn{
+    border-radius: 0.375rem 0px 0px  0.375rem;
+  }
+  .cartbtn{
+    border-radius: 0px 0.375rem 0.375rem 0px;
+  }
+  .btnCart{
+    background-color: #419197 ;
+    color: #fff;
+  }
+  .btnCart:hover{
+    background-color: #295c60 ;
+    color: #fff;
+  }
+  .btnAdded{
+    background-color: #324b4c;
+    color: #fff;
+  }
+  
+  /* carousel */
+  :host {
+    --visibleItems: 3;
+    --darkBlue: #1C3879;
+    --lightBlue: #607EAA; 
+    --gray: #EAE3D2;
+    --light: #F9F5EB;
+    --navFont: 18px;
+    --headerFont: 20px;
+    --bodyFont: 16px;
+    --footerFont: 14px;
+    --navColor: #419197;
+  }
+  .bg-nav{
+    background-color: var(--navColor);
+  }
+  .text-nav{
+    color: var(--navColor);
+  }
+  div > h2{
+    border-bottom: 5px solid var(--navColor);
+    border-radius: 5px;
+    color:grey;
+  }
+  .carousel-c {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  
+  .carousel-c-inner {
+    display: flex;
+    transition: transform 0.5s;
+  }
+  
+  /* .item-container {
+    flex: 0 0 calc(100% / var(--visibleItems));
+    padding: 10px;
+    box-sizing: border-box;
+  } */
+  .item-container {
+    flex: 0 0 calc(100% / var(--visibleItems));
+    flex-basis: calc(100% / var(--visibleItems));
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .w-9{
+    width: 90%;
+  }
+  .carousel-c-controls {
+    margin-top: 10px;
+  }
+  .item-content {
+    padding: 10px;
+    height: 270px;
+  }
+  .item-content:hover {
+  box-shadow: 0 0 5px #b4b4b4;
+  }
+  .item-content img{
+    background-color: #f2f2f2;
+  }
+  
+  button {
+    margin-right: 10px;
+  }
+  .carousel-c-controls button{
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 5px #b4b4b4;
+    border: none;
+    background-color: #cef3ff;
+  }
+  .top-35{
+    top: 35%;
+  }
+  .cursor{
+    cursor:pointer;
+  }
+  /****************** spinner ****************/
+  .spinner{
+    height: 62vh;
+  }
+  .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid var(--navColor);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--navColor) transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

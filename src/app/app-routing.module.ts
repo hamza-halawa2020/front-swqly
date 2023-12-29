@@ -5,6 +5,7 @@ import { SignInComponent } from './sign/components/sign-in/sign-in.component';
 import { SignUpComponent } from './signup/components/sign-up/sign-up.component';
 import { RegisterAsClientComponent } from './signup/components/register-as-client/register-as-client.component';
 import { RegisterAsVendorComponent } from './signup/components/register-as-vendor/register-as-vendor.component';
+import { SlideComponent } from './home-page/components/slide/slide.component';
 
 const routes: Routes = [
   {
@@ -23,10 +24,10 @@ const routes: Routes = [
     path: 'joinas',
     component: SignUpComponent,
   },
-  // {
-  //   path: 'test',
-  //   component: SlideComponent,
-  // },
+  {
+    path:'',
+    component: SlideComponent
+  },
 ];
 
 @NgModule({
