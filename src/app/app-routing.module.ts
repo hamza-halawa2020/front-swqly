@@ -1,26 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-import { JoinAsComponent } from './components/join-as/join-as.component';
-import { RegisterClientComponent } from './components/register-client/register-client.component';
-import { RegisterPartenerComponent } from './components/register-partener/register-partener.component';
+
+import { SignInComponent } from './sign/components/sign-in/sign-in.component';
+import { SignUpComponent } from './signup/components/sign-up/sign-up.component';
+import { RegisterAsClientComponent } from './signup/components/register-as-client/register-as-client.component';
+import { RegisterAsVendorComponent } from './signup/components/register-as-vendor/register-as-vendor.component';
 
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent,
+    component: SignInComponent,
   },
   {
     path: 'register-client',
-    component: RegisterClientComponent,
+    component: RegisterAsClientComponent,
   },
   {
-    path: 'register-partener',
-    component: RegisterPartenerComponent,
+    path: 'register-vendor',
+    component: RegisterAsVendorComponent,
   },
   {
     path: 'joinas',
-    component: JoinAsComponent,
+    component: SignUpComponent,
   },
   // {
   //   path: 'test',
