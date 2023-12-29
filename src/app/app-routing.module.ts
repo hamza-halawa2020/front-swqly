@@ -25,8 +25,8 @@ const routes: Routes = [
     component: SignUpComponent,
   },
   {
-    path:'',
-    component: SlideComponent
+    path: '',
+    component: SlideComponent,
   },
 ];
 
