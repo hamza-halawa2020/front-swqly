@@ -6,6 +6,7 @@ import { SignUpComponent } from './signup/components/sign-up/sign-up.component';
 import { RegisterAsClientComponent } from './signup/components/register-as-client/register-as-client.component';
 import { RegisterAsVendorComponent } from './signup/components/register-as-vendor/register-as-vendor.component';
 import { SlideComponent } from './home-page/components/slide/slide.component';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
     path: '',
     component: SlideComponent,
   },
+  {
+    path: '**',
+    component: NotFoundComponent
+  }
 ];
 
 @NgModule({

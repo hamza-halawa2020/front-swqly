@@ -18,19 +18,12 @@
   <p class="overflow-hidden m-0" style="height: 10% ; color: rgb(73, 99, 102);">
     <span class="fw-bolder">Price:</span> {{ product.price }} L.E
   </p>
-  <div *ngIf="role != 'pharmacy'" class="d-flex">
+  <div class="d-flex">
     <a
-      class="btn btn-secondary w-50 m-0 viewbtn"
+      class="btn btn-secondary m-0"
       >View detailes</a
     >
     <!-- <button
-      class="btn bg-nav text-white btnCart w-50 m-0 cartbtn"
-      (click)="addToCart(medication)"
-      *ngIf="!medication.added"
-    >
-      add to cart
-    </button>
-    <button
       class="btn btnAdded text-white w-50 m-0 cartbtn"
       *ngIf="medication.added"
       (click)="removeFromCart(medication)"
