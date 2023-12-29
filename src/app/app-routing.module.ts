@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { JoinAsComponent } from './components/join-as/join-as.component';
 import { RegisterClientComponent } from './components/register-client/register-client.component';
 import { RegisterPartenerComponent } from './components/register-partener/register-partener.component';
+import { SlideComponent } from './home-page/components/slide/slide.component';
 
 const routes: Routes = [
   {
@@ -22,10 +23,10 @@ const routes: Routes = [
     path: 'joinas',
     component: JoinAsComponent,
   },
-  // {
-  //   path: 'test',
-  //   component: SlideComponent,
-  // },
+  {
+    path:'',
+    component: SlideComponent
+  },
 ];
 
 @NgModule({
