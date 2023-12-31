@@ -7,8 +7,14 @@ import { RegisterAsClientComponent } from './signup/components/register-as-clien
 import { RegisterAsVendorComponent } from './signup/components/register-as-vendor/register-as-vendor.component';
 import { SlideComponent } from './home-page/components/slide/slide.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { ShopDetailModule } from './shop-detail/shop-detail.module';
+import { ShopDetailsComponent } from './shop-detail/components/shop-details/shop-details.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: SlideComponent,
+  },
   {
     path: 'login',
     component: SignInComponent,
@@ -26,8 +32,8 @@ const routes: Routes = [
     component: SignUpComponent,
   },
   {
-    path: '',
-    component: SlideComponent,
+    path: 'shop-details',
+    component: ShopDetailsComponent,
   },
   {
     path: '**',

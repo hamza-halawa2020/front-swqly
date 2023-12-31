@@ -1,0 +1,38 @@
+#profile-image{
+    bottom: -50px;
+    right: 5%;
+    height: 120px; 
+    width: 120px;
+    border-radius: 50%;
+}
+#cover-image{
+    height: 250px;
+}
+div > p {
+    text-align: right;
+}
+div > span {
+    display:block;
+    height: 1px;
+    border-bottom: 1px solid rgb(13,110,253);
+}
+#shop-details{
+    width:50%
+}
+@media screen and (max-width: 500px){
+    #profile-image{
+        bottom: -45px;
+        right: 5%;
+        height: 90px; 
+        width: 90px;
+    }
+    #cover-image{
+        height: 180px;
+    }
+}
+@media screen and (max-width:991px){
+    #shop-details{
+        width:100%;
+        padding: 25px;
+    }
+}
