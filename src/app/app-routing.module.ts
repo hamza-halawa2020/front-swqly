@@ -9,6 +9,7 @@ import { SlideComponent } from './home-page/components/slide/slide.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { ShopDetailModule } from './shop-detail/shop-detail.module';
 import { ShopDetailsComponent } from './shop-detail/components/shop-details/shop-details.component';
+import { ProductDetailsComponent } from './product-details/components/product-details/product-details.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'shop-details',
     component: ShopDetailsComponent,
+  },
+  {
+    path: 'product-details',
+    component: ProductDetailsComponent,
   },
   {
     path: '**',
