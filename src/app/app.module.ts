@@ -10,24 +10,21 @@ import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HomePageModule } from './home-page/home-page.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SignupModule } from './signup/signup.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    
-    NavBarComponent,
-    FooterComponent
-  ],
+  declarations: [AppComponent, NavBarComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     SignModule,
+    SignupModule,
     FontAwesomeModule,
     SharedModule,
     HomePageModule,
     HttpClientModule,
-    ],
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
