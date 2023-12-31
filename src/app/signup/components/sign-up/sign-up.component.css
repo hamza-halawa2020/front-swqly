@@ -1,14 +1,8 @@
 
-  
-
-.container {
-    direction: rtl;
-}
-
 .body {
     position: relative;
     /* width: 720px; */
-    /* height: 440px; */
+    /* height: 100vh; */
     margin: 20px auto;
     border: 1px solid #dddd;
     border-radius: 18px;
