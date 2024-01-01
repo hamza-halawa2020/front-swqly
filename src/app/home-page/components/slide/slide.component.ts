@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { UrlServiceService } from 'src/app/urlService/url-service.service';
 
 @Component({
   selector: 'app-slide',
@@ -17,15 +18,17 @@ export class SlideComponent {
   faAngleLeft = faAngleLeft;
   faAngleRight = faAngleRight
   // constructor( private http: HttpClient){}
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    protected urlService: UrlServiceService
+    ) { }
   ngOnInit(){
-    this.getProducts()
+    this.getProducts();
   }
   getProducts(){
     this.http.get(`https://fakestoreapi.com/products`).subscribe(
       (res:any) => { 
         this.products = res
-        console.log(this.products)
         this.getCategories();
         this.initializeActiveIndices();
       },
@@ -35,7 +38,6 @@ export class SlideComponent {
   getCategories(){
     for(let i in this.products){
       this.categories.push(this.products[i].category)
-      console.log(this.categories)
     }
     this.categories = Array.from(new Set(this.categories)); // Convert set to array
   }
@@ -66,4 +68,5 @@ export class SlideComponent {
   diplay(param: string){
     // this.router.navigate([`pharmacyCategory/${param}`]);
   }
+
 }

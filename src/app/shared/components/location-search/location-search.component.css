@@ -1,0 +1,80 @@
+.cstm-height-card .card-img-top {
+    height: 100px;
+    object-fit: cover;
+  }
+  h3{
+    color:  rgb(73, 99, 102);
+    font-size:2rem;
+    font-weight: bold;
+  }
+  h5{
+    color:  rgb(73, 99, 102);
+    font-size:1.5rem;
+    font-weight: bold;
+  }
+  p{
+    color:  rgb(73, 99, 102);
+    font-size:1rem;
+    font-weight: bold;
+  }
+  a{
+    color: aliceblue;
+    font-size: larger;
+    /* font-weight: bold; */
+    background-color: rgb(78, 122, 128);
+}
+
+.angle-down{
+  animation: angle .5s;
+  animation-fill-mode: forwards;
+}
+@keyframes angle {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(180deg);
+  }
+}
+.govern:hover{
+  background-color: #ddd;
+}
+.cursor{
+  cursor: pointer;
+}
+#open-dropdown, #search-form{
+    border: 1px solid rgb(154, 165, 194);
+}
+.dropdown a:hover {background-color: #ddd;}
+
+.slide-container{
+  height: 450px;
+}
+/****************** spinner ****************/
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #419197;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+  .btnView{
+    background-color: #419197 ;
+    color: #fff;
+  }
+  .btnView:hover{
+    background-color: #295c60 ;
+    color: #fff;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 

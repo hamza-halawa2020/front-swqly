@@ -8,7 +8,7 @@ import { CardComponent } from './components/card/card.component';
 @NgModule({
   declarations: [
     SlideComponent,
-    CardComponent
+    CardComponent,
   ],
   imports: [
     CommonModule,

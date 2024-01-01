@@ -10,20 +10,21 @@ import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HomePageModule } from './home-page/home-page.module';
 import { HttpClientModule } from '@angular/common/http';
+import { LocationSearchComponent } from './shared/components/location-search/location-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    LocationSearchComponent
   ],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     AppRoutingModule,
     ReactiveFormsModule,
     SignModule,
-    FontAwesomeModule,
     SharedModule,
     HomePageModule,
     HttpClientModule,

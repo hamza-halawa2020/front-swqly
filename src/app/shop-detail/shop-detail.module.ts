@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ShopDetailsComponent } from './components/shop-details/shop-details.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -9,7 +9,8 @@ import { ShopDetailsComponent } from './components/shop-details/shop-details.com
     ShopDetailsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
   ]
 })
 export class ShopDetailModule { }

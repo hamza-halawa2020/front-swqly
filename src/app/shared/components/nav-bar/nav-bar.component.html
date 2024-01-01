@@ -1,48 +1,44 @@
 <!-- <nav class="navbar navbar-expand-lg bg-primary"> -->
-  <nav class="navbar navbar-expand-lg bg-primary shadow sticky-top">
-  <div class="container">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<div id="main-div">
+  <nav class="navbar navbar-expand-lg bg-transparent shadow sticky-top">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 flex-grow-1">
-        <li class="nav-item">
-          <a
-            class="nav-link active text-white"
-            aria-current="page"
-            routerLink=""
-            >الصفحة الرئيسية</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="services">الخدمات</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="about">نبذة عنا</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="contact">تواصل معنا</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="login">تسجيل الدخول</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="joinas">انصم معنا</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="joinas">تسجيل الخروج</a>
-        </li>
-      </ul>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 flex-grow-1">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="">الصفحة الرئيسية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="">المفضل</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="services">الخدمات</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="about">نبذة عنا</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="contact">تواصل معنا</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="login">تسجيل الدخول</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="joinas">انصم معنا</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="joinas">تسجيل الخروج</a>
+          </li>
+        </ul>
+      </div>
+      <a class="navbar-brand" routerLink="">Logo</a>
     </div>
-    <a class="navbar-brand" routerLink="">Logo</a>
+  </nav>
+  <div class="w-100" style="min-height: 30px;">
+    <app-location-search></app-location-search>
   </div>
-</nav>
+</div>
