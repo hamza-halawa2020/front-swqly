@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 })
 export class RegisterAsVendorComponent {
   formSubmitted: boolean = false;
-
   constructor(private router: Router) {}
   private auth: any;
 
@@ -23,10 +22,16 @@ export class RegisterAsVendorComponent {
     full_name: new FormControl('', [Validators.required]),
     governorate: new FormControl('', [Validators.required]),
     city: new FormControl('', [Validators.required]),
+    address: new FormControl('', [Validators.required]),
+    shop_categories: new FormControl('', [Validators.required]),
+
     phone: new FormControl('', [
       Validators.required,
       Validators.pattern('^(010|011|012|015)\\d{8}$'),
     ]),
+    profile_image: new FormControl('', [Validators.required]),
+    cover_image: new FormControl('', [Validators.required]),
+
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(6),
@@ -46,10 +51,21 @@ export class RegisterAsVendorComponent {
   get city(): FormControl {
     return this.loginForm.get('city') as FormControl;
   }
+  get address(): FormControl {
+    return this.loginForm.get('address') as FormControl;
+  }
+  get shop_categories(): FormControl {
+    return this.loginForm.get('shop_categories') as FormControl;
+  }
   get phone(): FormControl {
     return this.loginForm.get('phone') as FormControl;
   }
-
+  get profile_image(): FormControl {
+    return this.loginForm.get('profile_image') as FormControl;
+  }
+  get cover_image(): FormControl {
+    return this.loginForm.get('cover_image') as FormControl;
+  }
   get password(): FormControl {
     return this.loginForm.get('password') as FormControl;
   }

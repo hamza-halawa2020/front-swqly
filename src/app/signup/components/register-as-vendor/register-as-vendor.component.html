@@ -9,64 +9,69 @@
         >
           <div class="text-center p-2 mb-3 bg-light">
             <h3 class="pt-2">👋 مرحباً بك</h3>
-            <h6 class="pt-2">استمتع معنا بتجربة تسوق مثيرة</h6>
+            <h6 class="pt-2">اعرض منتجاتك بثفة وامان</h6>
           </div>
-          <!-- name input -->
-          <div class="mb-3">
-            <label for="full_name" class="form-label"
-              >اﻻسم بالكامل<span class="text-danger">*</span></label
-            >
-            <input
-              type=" text"
-              class="form-control"
-              id="full_name"
-              formControlName="full_name"
-              placeholder="من فصلك ادخل اﻻسم بالكامل"
-            />
-            <div
-              class="form-text text-success"
-              *ngIf="full_name.valid && (full_name.touched || full_name.dirty)"
-            >
-              <i class="fa-solid fa-check"></i>تبدو جيدة!
+          <!-- name and email input -->
+          <div class="row">
+            <!-- name input -->
+            <div class="col mb-3">
+              <label for="full_name" class="form-label"
+                >اﻻسم بالكامل<span class="text-danger">*</span></label
+              >
+              <input
+                type=" text"
+                class="form-control"
+                id="full_name"
+                formControlName="full_name"
+                placeholder="من فصلك ادخل اﻻسم بالكامل"
+              />
+              <div
+                class="form-text text-success"
+                *ngIf="
+                  full_name.valid && (full_name.touched || full_name.dirty)
+                "
+              >
+                <i class="fa-solid fa-check"></i>تبدو جيدة!
+              </div>
+              <div
+                class="form-text text-danger"
+                *ngIf="full_name.errors?.['required'] && (full_name.dirty || full_name.touched)"
+              >
+                <i class="fa-solid fa-circle-exclamation"></i> اﻻسم مطلوب.
+              </div>
             </div>
-            <div
-              class="form-text text-danger"
-              *ngIf="full_name.errors?.['required'] && (full_name.dirty || full_name.touched)"
-            >
-              <i class="fa-solid fa-circle-exclamation"></i> اﻻسم مطلوب.
-            </div>
-          </div>
-          <!-- email input -->
-          <div class="mb-3">
-            <label for="email" class="form-label"
-              >البريد الإلكتروني<span class="text-danger">*</span></label
-            >
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              formControlName="email"
-              placeholder="من فصلك ادخل البريد الإلكتروني"
-            />
-            <div
-              class="form-text text-success"
-              *ngIf="Email.valid && (Email.touched || Email.dirty)"
-            >
-              <i class="fa-solid fa-check"></i>تبدو جيدة!
-            </div>
-            <div
-              class="form-text text-danger"
-              *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)"
-            >
-              <i class="fa-solid fa-circle-exclamation"></i>البريد الإلكتروني
-              مطلوب.
-            </div>
-            <div
-              class="form-text text-danger"
-              *ngIf="Email.errors?.['pattern'] && (Email.dirty || Email.touched)"
-            >
-              <i class="fa-solid fa-circle-exclamation"></i>يجب عليك إدخال بريد
-              إلكتروني صالح.
+            <!-- email input -->
+            <div class="col mb-3">
+              <label for="email" class="form-label"
+                >البريد الإلكتروني<span class="text-danger">*</span></label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                formControlName="email"
+                placeholder="من فصلك ادخل البريد الإلكتروني"
+              />
+              <div
+                class="form-text text-success"
+                *ngIf="Email.valid && (Email.touched || Email.dirty)"
+              >
+                <i class="fa-solid fa-check"></i>تبدو جيدة!
+              </div>
+              <div
+                class="form-text text-danger"
+                *ngIf="Email.errors?.['required'] && (Email.dirty || Email.touched)"
+              >
+                <i class="fa-solid fa-circle-exclamation"></i>البريد الإلكتروني
+                مطلوب.
+              </div>
+              <div
+                class="form-text text-danger"
+                *ngIf="Email.errors?.['pattern'] && (Email.dirty || Email.touched)"
+              >
+                <i class="fa-solid fa-circle-exclamation"></i>يجب عليك إدخال
+                بريد إلكتروني صالح.
+              </div>
             </div>
           </div>
           <!-- governorate and city input -->
@@ -133,36 +138,98 @@
               </div>
             </div>
           </div>
-          <!-- phone number input -->
+          <!-- address input -->
           <div class="mb-3">
-            <label for="phone" class="form-label"
-              >رقم الهاتف<span class="text-danger">*</span></label
+            <label for="address" class="form-label"
+              >العنوان بالتفصيل<span class="text-danger">*</span></label
             >
             <input
-              type="text"
+              type=" text"
               class="form-control"
-              id="phone"
-              formControlName="phone"
-              placeholder="من فصلك ادخل رقم هاتفك"
+              id="address"
+              formControlName="address"
+              placeholder="من فصلك ادخل العنوان بالتفصيل"
             />
             <div
               class="form-text text-success"
-              *ngIf="phone.valid && (phone.touched || phone.dirty)"
+              *ngIf="address.valid && (address.touched || address.dirty)"
             >
               <i class="fa-solid fa-check"></i>تبدو جيدة!
             </div>
             <div
               class="form-text text-danger"
-              *ngIf="phone.errors?.['required'] && (phone.dirty || phone.touched)"
+              *ngIf="address.errors?.['required'] && (address.dirty || address.touched)"
             >
-              <i class="fa-solid fa-circle-exclamation"> </i>رقم الهاتف مطلوب
+              <i class="fa-solid fa-circle-exclamation"></i> العنوان مطلوب.
             </div>
-            <div
-              class="form-text text-danger"
-              *ngIf="Email.errors?.['pattern'] && (Email.dirty || Email.touched)"
-            >
-              <i class="fa-solid fa-circle-exclamation"></i>رقم الهاتف الذي
-              ادخلته غير صالح.
+          </div>
+          <!-- shop_categories and phone input -->
+
+          <div class="row">
+            <!-- shop_categories input -->
+            <div class="col mb-3">
+              <label for="shop_categories" class="form-label"
+                >القسم<span class="text-danger">*</span></label
+              >
+              <select
+                class="form-control"
+                id="shop_categories"
+                formControlName="shop_categories"
+              >
+                <option selected value="" disabled>من فضلك ادخل القسم</option>
+
+                <option value="beni sueif">beni sueif</option>
+                <option value="cairo">cairo</option>
+                <option value="alex">alex</option>
+              </select>
+              <div
+                class="form-text text-success"
+                *ngIf="
+                  shop_categories.valid &&
+                  (shop_categories.touched || shop_categories.dirty)
+                "
+              >
+                <i class="fa-solid fa-check"></i>تبدو جيدة!
+              </div>
+              <div
+                class="form-text text-danger"
+                *ngIf="shop_categories.errors?.['required'] && (shop_categories.dirty || shop_categories.touched)"
+              >
+                <i class="fa-solid fa-circle-exclamation"></i>من فضلك ادخل
+                القسم.
+              </div>
+            </div>
+            <!-- phone number input -->
+            <div class="col mb-3">
+              <label for="phone" class="form-label"
+                >رقم الهاتف<span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="phone"
+                formControlName="phone"
+                placeholder="من فصلك ادخل رقم هاتفك"
+              />
+              <div
+                class="form-text text-success"
+                *ngIf="phone.valid && (phone.touched || phone.dirty)"
+              >
+                <i class="fa-solid fa-check"></i>تبدو جيدة!
+              </div>
+              <div
+                class="form-text text-danger"
+                *ngIf="phone.errors?.['required'] && (phone.dirty || phone.touched)"
+              >
+                <i class="fa-solid fa-circle-exclamation"> </i>رقم الهاتف مطلوب
+              </div>
+              <div
+                class="form-text text-danger"
+                *ngIf="Email.errors?.['pattern'] && (Email.dirty || Email.touched)"
+              >
+                <i class="fa-solid fa-circle-exclamation"></i>رقم الهاتف الذي
+                ادخلته غير صالح.
+              </div>
             </div>
           </div>
           <!-- password input -->
@@ -197,6 +264,63 @@
               المرور من 6 إلى 15 حرفا طويلا.
             </div>
           </div>
+
+          <!-- profile image input -->
+          <div class="mb-3">
+            <label for="profile_image" class="form-label"
+              >الصورة الشخصية<span class="text-danger">*</span>
+            </label>
+            <input
+              formControlName="profile_image"
+              type="file"
+              class="form-control"
+              id="profile_image"
+            />
+            <div
+              class="form-text text-success"
+              *ngIf="
+                profile_image.valid &&
+                (profile_image.touched || profile_image.dirty)
+              "
+            >
+              <i class="fa-solid fa-check"></i>تبدو جيدة!
+            </div>
+            <div
+              class="form-text text-danger"
+              *ngIf="profile_image.errors?.['required'] && (profile_image.dirty || profile_image.touched)"
+            >
+              <i class="fa-solid fa-circle-exclamation"> </i>من فضلك ادخل صورتك
+              الشخصية
+            </div>
+          </div>
+
+          <!-- cover image input -->
+          <div class="mb-3">
+            <label for="cover_image" class="form-label"
+              >صورة الغلاف<span class="text-danger">*</span></label
+            >
+            <input
+              formControlName="cover_image"
+              type="file"
+              class="form-control"
+              id="cover_image"
+            />
+            <div
+              class="form-text text-success"
+              *ngIf="
+                cover_image.valid && (cover_image.touched || cover_image.dirty)
+              "
+            >
+              <i class="fa-solid fa-check"></i>تبدو جيدة!
+            </div>
+            <div
+              class="form-text text-danger"
+              *ngIf="cover_image.errors?.['required'] && (cover_image.dirty || cover_image.touched)"
+            >
+              <i class="fa-solid fa-circle-exclamation"> </i>من فضلك ادخل صورة
+              الغلاف
+            </div>
+          </div>
           <!-- button input -->
           <div class="d-grid mb-3">
             <button
@@ -224,9 +348,6 @@
               </svg>
             </button>
           </div>
-          <p class="text-center mt-3">
-            لست عضوا ؟<a routerLink="/joinas">انضم الينا الان </a>
-          </p>
         </form>
       </div>
     </div>
