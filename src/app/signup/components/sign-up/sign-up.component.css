@@ -1,8 +1,22 @@
+a{
+    text-decoration: none;
+    color: red;
 
+}
+
+svg {
+    fill: #ccc;
+    transition: fill 0.3s ease; 
+}
+
+svg:hover {
+    fill: #000; 
+    transform: scale(1.1); 
+    transition: fill 0.3s ease, transform 0.3s ease; 
+}
+  
 .body {
     position: relative;
-    /* width: 720px; */
-    /* height: 100vh; */
     margin: 20px auto;
     border: 1px solid #dddd;
     border-radius: 18px;
@@ -19,11 +33,16 @@
 .box-2 {
     padding: 10px;
 }
-
-.box-1,
-.box-2 {
-    width: 50%;
+.box-2 a:hover {
+    color: #000;
+    transform: scale(1.1); 
+    transition: fill 0.3s ease, transform 0.3s ease;  
 }
+  
+
+.box-1{
+    width: 60%;
+} 
 
 .h-1 {
     font-size: 24px;
@@ -40,57 +59,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border: 2px solid transparent;
-    text-decoration: none;
     color: #615f5fdd;
 }
 
-.box:active,
-.box:visited {
-    border: 2px solid #ee82ee;
-}
 
-.box:hover {
-    border: 2px solid #ee82ee;
-}
 
-.btn.btn-primary {
-    background-color: transparent;
-    color: #ee82ee;
-    border: 0px;
-    padding: 0;
-    font-size: 14px;
-}
-
-.btn.btn-primary .fas.fa-chevron-right {
-    font-size: 12px;
-}
-
-.footer .p-color {
-    color: #ee82ee;
-}
 
 .footer.text-muted {
     font-size: 10px;
 }
 
-.fas.fa-times {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    height: 20px;
-    width: 20px;
-    background-color: #f3cff379;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.fas.fa-times:hover {
-    color: #ff0000;
-}
 
 @media (max-width:767px) {
     body {

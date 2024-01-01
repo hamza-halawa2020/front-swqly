@@ -11,6 +11,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { HomePageModule } from './home-page/home-page.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LocationSearchComponent } from './shared/components/location-search/location-search.component';
+import { SignupModule } from './signup/signup.module';
 
 @NgModule({
   declarations: [
@@ -25,10 +26,12 @@ import { LocationSearchComponent } from './shared/components/location-search/loc
     AppRoutingModule,
     ReactiveFormsModule,
     SignModule,
+    SignupModule,
+    FontAwesomeModule,
     SharedModule,
     HomePageModule,
     HttpClientModule,
-    ],
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
