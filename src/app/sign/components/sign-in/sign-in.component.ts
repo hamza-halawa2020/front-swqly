@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SignServiceService } from '../../signService/sign-service.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -10,8 +11,7 @@ import { Router } from '@angular/router';
 export class SignInComponent {
   formSubmitted: boolean = false;
 
-  constructor(private router: Router) {}
-  private auth: any;
+  constructor(private router: Router, private auth: SignServiceService) {}
 
   ngOnInit(): void {}
 
@@ -38,7 +38,18 @@ export class SignInComponent {
   loginSubmitted() {
     if (this.loginForm.valid) {
       this.formSubmitted = true;
-      console.log(this.loginForm.value);
+      this.auth.login(this.loginForm.value).subscribe({
+        next: (res: any) => {
+          localStorage.setItem('token', res.token);
+          console.log('success login');
+
+          this.loginForm.reset();
+          this.router.navigate(['']);
+        },
+        error: () => {
+          console.log("can't login");
+        },
+      });
     } else {
       console.log('Form is invalid. Please fill all the required fields.');
     }

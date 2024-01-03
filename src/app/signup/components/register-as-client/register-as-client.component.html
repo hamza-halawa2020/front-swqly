@@ -73,34 +73,37 @@
           <div class="row">
             <!-- governorate input -->
             <div class="col mb-3">
-              <label for="governorate" class="form-label"
+              <label for="governorate_id" class="form-label"
                 >المحافظة<span class="text-danger">*</span></label
               >
               <select
                 class="form-control"
-                id="governorate"
-                formControlName="governorate"
+                id="governorate_id"
+                formControlName="governorate_id"
               >
                 <option selected value="" disabled>
                   من فضلك ادخل المحافظة
                 </option>
 
-                <option value="beni sueif">beni sueif</option>
-                <option value="cairo">cairo</option>
-                <option value="alex">alex</option>
+                <option
+                  value="{{ governorate.id }}"
+                  *ngFor="let governorate of governorates"
+                >
+                  {{ governorate.name }}
+                </option>
               </select>
               <div
                 class="form-text text-success"
                 *ngIf="
-                  governorate.valid &&
-                  (governorate.touched || governorate.dirty)
+                  governorate_id.valid &&
+                  (governorate_id.touched || governorate_id.dirty)
                 "
               >
                 <i class="fa-solid fa-check"></i>تبدو جيدة!
               </div>
               <div
                 class="form-text text-danger"
-                *ngIf="governorate.errors?.['required'] && (governorate.dirty || governorate.touched)"
+                *ngIf="governorate_id.errors?.['required'] && (governorate_id.dirty || governorate_id.touched)"
               >
                 <i class="fa-solid fa-circle-exclamation"></i>من فضلك ادخل
                 محافظتك.
