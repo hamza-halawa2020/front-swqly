@@ -37,10 +37,9 @@ export class LocationSearchComponent implements OnInit {
 
 // function to get all gavernorates 
 getData() {
-  this.urlService.getGovernorates().subscribe(
+  this.urlService.get('/governorates', '').subscribe(
     (res) => {
       this.data = res;
-      console.log(this.data)
     },
     (error) => {
       console.error('Error:', error);
@@ -60,7 +59,6 @@ openSubList(val: any) {
   this.GovernorateName = val.name;
   this.showList = !this.showList;
   this.showSubList = !this.showSubList;
-  console.log(this.cities)
 }
 // function to close list of cities 
 closeSubList(){

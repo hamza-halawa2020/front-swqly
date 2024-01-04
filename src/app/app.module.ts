@@ -12,6 +12,9 @@ import { HomePageModule } from './home-page/home-page.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LocationSearchComponent } from './shared/components/location-search/location-search.component';
 import { SignupModule } from './signup/signup.module';
+import { CounterService } from './shared/sharedService/counter.service';
+import { RouterModule } from '@angular/router';
+import { NgxPaginationModule } from 'ngx-pagination'; 
 
 @NgModule({
   declarations: [
@@ -31,8 +34,10 @@ import { SignupModule } from './signup/signup.module';
     SharedModule,
     HomePageModule,
     HttpClientModule,
+    RouterModule,
+    NgxPaginationModule
   ],
-  providers: [],
+  providers: [CounterService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

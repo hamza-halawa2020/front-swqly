@@ -11,33 +11,25 @@ import { UrlServiceService } from 'src/app/urlService/url-service.service';
   styleUrls: ['./slide.component.css']
 })
 export class SlideComponent {
-  products:any;
+  products: any;
   activeIndices: { [Category: string]: number } = {};
   categories: any = [];
   visibleItems = 3;
   faAngleLeft = faAngleLeft;
   faAngleRight = faAngleRight
-  // constructor( private http: HttpClient){}
+  shopCategoryObjs: any;
   constructor(
     private http: HttpClient,
     protected urlService: UrlServiceService
-    ) { }
-  ngOnInit(){
-    this.getProducts();
+  ) { }
+  ngOnInit() {
+    this.getShops();
   }
-  getProducts(){
-    this.http.get(`https://fakestoreapi.com/products`).subscribe(
-      (res:any) => { 
-        this.products = res
-        this.getCategories();
-        this.initializeActiveIndices();
-      },
-      (error) => console.log(error)
-    )
-  }
-  getCategories(){
-    for(let i in this.products){
-      this.categories.push(this.products[i].category)
+
+  getCategories() {
+    for (let i in this.products) {
+      this.categories.push(this.products[i].shop_category.name
+      )
     }
     this.categories = Array.from(new Set(this.categories)); // Convert set to array
   }
@@ -58,15 +50,30 @@ export class SlideComponent {
   }
 
   getCategoryProducts(Category: string): any[] {
-    return this.products.filter((prod: any) => prod.category === Category);
+    return this.products.filter((prod: any) => prod.shop_category.name === Category);
   }
 
   getActiveIndex(Category: string): number {
     return this.activeIndices[Category];
   }
 
-  diplay(param: string){
+  diplay(param: string) {
     // this.router.navigate([`pharmacyCategory/${param}`]);
+    console.log(param)
   }
+
+  getShops() {
+    this.urlService.get('/shop-owners', '').subscribe(
+      (res: any) => {
+        this.products = res
+        this.getCategories();
+        this.initializeActiveIndices();
+      },
+      (error: any) => {
+        console.log(error)
+      }
+    )
+  }
+
 
 }

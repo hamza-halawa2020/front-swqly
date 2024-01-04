@@ -1,0 +1,33 @@
+<router-outlet></router-outlet>
+<div id="carouselExample" class="carousel slide" style="height: 400px;">
+  <div class="carousel-inner h-100">
+    <div class="carousel-item active h-100">
+      <img src="assets/img/e-com1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item h-100">
+      <img src="assets/img/e-com2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item h-100">
+      <img src="assets/img/e-com3.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- filteration section  -->
+<div class="d-flex justify-content-center my-1 filteration-dev">
+  <ul class="d-flex w-50 m-auto list-unstyled justify-content-center">
+    <li (click)="isFiltered=false"  class="px-3 py-3">الكل</li>
+    <li class="px-3 py-3" *ngFor="let cat of shopCategoryObjs" [attr.data-category]="cat.slug" (click)="filterationCategory($event)">{{cat.name}}</li>
+  </ul>
+</div>
+
+<app-slide *ngIf="!isFiltered"></app-slide>
+<app-shop-filter *ngIf="isFiltered" [shops]="fiteredShops"></app-shop-filter>

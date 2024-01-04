@@ -1,0 +1,13 @@
+div > ul > li {
+    cursor: pointer;
+    font-size: 20px;
+
+}
+div > ul > li:hover {
+    background-color: #6795ff;
+}
+
+.filteration-dev{
+    border-top: solid 1px gray;
+    border-bottom: solid 1px gray;
+}

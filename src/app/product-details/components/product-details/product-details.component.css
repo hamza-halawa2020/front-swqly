@@ -1,0 +1,9 @@
+span{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

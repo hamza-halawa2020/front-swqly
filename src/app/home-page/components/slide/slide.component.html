@@ -1,50 +1,28 @@
-<router-outlet></router-outlet>
-<div id="carouselExample" class="carousel slide" style="height: 400px;">
-  <div class="carousel-inner h-100">
-    <div class="carousel-item active h-100">
-      <img src="assets/img/e-com1.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item h-100">
-      <img src="assets/img/e-com2.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item h-100">
-      <img src="assets/img/e-com3.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-<!-- filteration section  -->
-<div class="d-flex justify-content-center my-1 filteration-dev">
-  <ul class="d-flex w-50 m-auto list-unstyled justify-content-center">
-    <li class="px-3 py-3">اجهزة كهربائية</li>
-    <li class="px-3 py-3">ملابس</li>
-    <li class="px-3 py-3">احذية</li>
-    <li class="px-3 py-3">مفروشات</li>
-  </ul>
-</div>
-
 
 <!-- shop section -->
 <div>
-  <h3 class="text-center my-3">محلات محافظتك</h3>
+  <div class="d-flex justify-content-center my-5 flex-column align-items-center">
+    <span >
+      <h2 class="fw-bold text-black">محلات محافظتك</h2>
+      <span class="d-block " style="height: 1px; border-bottom: 2px solid #000"></span>
+    </span>
+  </div>
   <div>
     <div>
       <div>
         <div *ngFor="let cat of categories" class=" my-5">
-          <div class="d-flex justify-content-between align-items-end ps-5 w-9 m-auto "
+          <div class="d-flex justify-content-between align-items-end pe-5 w-9 m-auto "
             *ngIf="getCategoryProducts(cat).length !==0">
-            <h2 class="text-center d-inline-block text-capitalize  mb-4">{{ cat }}</h2>
+            
+            <div class="d-flex justify-content-start my-5 flex-column align-items-center">
+              <span >
+                <h3 class="fw-bold mb-1 text-black ">{{ cat }}</h3>
+                <span class="d-block " style="height: 1px; border-bottom: 2px solid #000"></span>
+              </span>
+            </div>
           </div>
-          <div class="carousel-c position-relative  w-9 m-auto ">
-            <div class="carousel-c-inner w-100"
+          <div class="carousel-c position-relative w-9 m-auto">
+            <div class="carousel-c-inner w-100" id="carousel-app"
               [style.transform]="'translateX(' + (-getActiveIndex(cat) * (100 / visibleItems)) + '%)'">
               <app-card class="item-container w-100" *ngFor="let prod of getCategoryProducts(cat); let index = index"
                 [product]="prod"></app-card>

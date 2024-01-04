@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,9 @@ export class UrlServiceService {
     protected http: HttpClient
   ) { }
 
-  getGovernorates(){
-    return this.http.get(this.baseUrl + "/governorates")
+  get(path: string, body: string): Observable<any> {
+    // Use the body in the HTTP request as a query parameter
+    return this.http.get(this.baseUrl + path, { params: { category: body } });
   }
 
 }

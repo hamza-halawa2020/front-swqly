@@ -7,6 +7,8 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./shop-details.component.css']
 })
 export class ShopDetailsComponent {
+
+  constructor(){}
   faHeart = faHeart;
   isFavorited = false;
   favoriteCount = 0;

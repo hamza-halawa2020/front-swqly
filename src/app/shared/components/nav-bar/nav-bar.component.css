@@ -4,6 +4,9 @@ a{
 }
 #main-div{
     background-image: linear-gradient(rgb(13,110,253), #fff);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 nav{
     box-shadow: none !important;

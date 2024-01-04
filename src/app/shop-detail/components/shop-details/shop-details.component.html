@@ -34,7 +34,7 @@
               <span *ngIf="favoriteCount > 0" class="counter">{{ favoriteCount }}</span>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <div class="d-flex justify-content-between px-3">
-                  <a href="#" class="btn btn-primary">تفاصيل</a>
+                  <a href="#" class="btn btn-primary" [routerLink]="'/product-details'">تفاصيل</a>
                   <span class="position-relative justify-content-center d-flex align-items-center ">
                       <fa-icon [icon]="faHeart" id="heart-1" class="fs-2 position-absolute text-danger"></fa-icon>
                       <fa-icon [icon]="faHeart" id="heart-1" class="fs-3 position-absolute" [ngClass]="{ 'text-danger': isFavorited, 'text-white': !isFavorited }" (click)="addToFav()"></fa-icon>
@@ -51,7 +51,7 @@
               <span *ngIf="favoriteCount > 0" class="counter">{{ favoriteCount }}</span>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <div class="d-flex justify-content-between px-3">
-                  <a href="#" class="btn btn-primary">تفاصيل</a>
+                  <a href="#" class="btn btn-primary" [routerLink]="'/product-details'">تفاصيل</a>
                   <span class="position-relative justify-content-center d-flex align-items-center ">
                       <fa-icon [icon]="faHeart" id="heart-1" class="fs-2 position-absolute text-danger"></fa-icon>
                       <fa-icon [icon]="faHeart" id="heart-1" class="fs-3 position-absolute" [ngClass]="{ 'text-danger': isFavorited, 'text-white': !isFavorited }" (click)="addToFav()"></fa-icon>
@@ -68,7 +68,7 @@
               <span *ngIf="favoriteCount > 0" class="counter">{{ favoriteCount }}</span>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <div class="d-flex justify-content-between px-3">
-                  <a href="#" class="btn btn-primary">تفاصيل</a>
+                  <a href="#" class="btn btn-primary" [routerLink]="'/product-details'">تفاصيل</a>
                   <span class="position-relative justify-content-center d-flex align-items-center ">
                       <fa-icon [icon]="faHeart" id="heart-1" class="fs-2 position-absolute text-danger"></fa-icon>
                       <fa-icon [icon]="faHeart" id="heart-1" class="fs-3 position-absolute" [ngClass]="{ 'text-danger': isFavorited, 'text-white': !isFavorited }" (click)="addToFav()"></fa-icon>

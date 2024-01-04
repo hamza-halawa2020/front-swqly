@@ -10,11 +10,12 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
 import { ShopDetailModule } from './shop-detail/shop-detail.module';
 import { ShopDetailsComponent } from './shop-detail/components/shop-details/shop-details.component';
 import { ProductDetailsComponent } from './product-details/components/product-details/product-details.component';
+import { HomePageComponent } from './home-page/components/home-page/home-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SlideComponent,
+    component: HomePageComponent,
   },
   {
     path: 'login',
@@ -33,7 +34,7 @@ const routes: Routes = [
     component: SignUpComponent,
   },
   {
-    path: 'shop-details',
+    path: 'shop-details/:slug',
     component: ShopDetailsComponent,
   },
   {
