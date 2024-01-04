@@ -2,15 +2,24 @@
 <div id="main-div">
   <nav class="navbar navbar-expand-lg bg-transparent shadow sticky-top">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 flex-grow-1">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="">الصفحة الرئيسية</a>
+            <a class="nav-link active" aria-current="page" routerLink=""
+              >الصفحة الرئيسية</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link active position-relative " aria-current="page" routerLink="">
@@ -28,20 +37,26 @@
             <a class="nav-link" routerLink="contact">تواصل معنا</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="login">تسجيل الدخول</a>
+            <a class="nav-link" routerLink="login" *ngIf="!isLoggedIn()"
+              >تسجيل الدخول</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="joinas">انصم معنا</a>
+            <a class="nav-link" routerLink="joinas" *ngIf="!isLoggedIn()"
+              >انصم معنا</a
+            >
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="joinas">تسجيل الخروج</a>
+          <li class="nav-item" *ngIf="isLoggedIn()">
+            <a class="nav-link" routerLink="" (click)="logout()"
+              >تسجيل الخروج</a
+            >
           </li>
         </ul>
       </div>
       <a class="navbar-brand" routerLink="">Logo</a>
     </div>
   </nav>
-  <div class="w-100" style="min-height: 30px;">
+  <div class="w-100" style="min-height: 30px">
     <app-location-search></app-location-search>
   </div>
 </div>
