@@ -40,7 +40,8 @@ export class SignInComponent {
       this.formSubmitted = true;
       this.auth.login(this.loginForm.value).subscribe({
         next: (res: any) => {
-          localStorage.setItem('token', res.token);
+          // localStorage.setItem('token', res.token);
+          this.auth.setTokenInCookie(res.token);
           console.log('success login');
 
           this.loginForm.reset();

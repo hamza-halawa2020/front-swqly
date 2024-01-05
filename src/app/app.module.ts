@@ -14,14 +14,15 @@ import { LocationSearchComponent } from './shared/components/location-search/loc
 import { SignupModule } from './signup/signup.module';
 import { CounterService } from './shared/sharedService/counter.service';
 import { RouterModule } from '@angular/router';
-import { NgxPaginationModule } from 'ngx-pagination'; 
+import { NgxPaginationModule } from 'ngx-pagination';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     FooterComponent,
-    LocationSearchComponent
+    LocationSearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,9 +36,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HomePageModule,
     HttpClientModule,
     RouterModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ],
-  providers: [CounterService],
+  providers: [CounterService, CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

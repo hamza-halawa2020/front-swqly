@@ -11,9 +11,9 @@ export class NavBarComponent implements OnInit {
   counter: number = 0;
 
   constructor(
-    private counterService: CounterService, 
+    private counterService: CounterService,
     private authService: SignServiceService
-    ) {}
+  ) {}
 
   ngOnInit(): void {
     this.counter = this.counterService.getCount();
@@ -27,4 +27,3 @@ export class NavBarComponent implements OnInit {
     this.authService.logout();
   }
 }
-
