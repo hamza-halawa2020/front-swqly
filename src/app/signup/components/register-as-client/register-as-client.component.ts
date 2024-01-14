@@ -11,7 +11,7 @@ import { SignupServiceService } from '../../signupService/signup-service.service
 export class RegisterAsClientComponent {
   formSubmitted: boolean = false;
   governorates: any;
-
+  cities: any;
   constructor(
     private router: Router,
     private registerUser: SignupServiceService
@@ -28,7 +28,7 @@ export class RegisterAsClientComponent {
     ]),
     full_name: new FormControl('', [Validators.required]),
     governorate_id: new FormControl('', [Validators.required]),
-    city: new FormControl('', [Validators.required]),
+    city_id: new FormControl('', [Validators.required]),
     phone: new FormControl('', [
       Validators.required,
       Validators.pattern('^(010|011|012|015)\\d{8}$'),
@@ -51,7 +51,7 @@ export class RegisterAsClientComponent {
     return this.loginForm.get('governorate_id') as FormControl;
   }
   get city(): FormControl {
-    return this.loginForm.get('city') as FormControl;
+    return this.loginForm.get('city_id') as FormControl;
   }
   get phone(): FormControl {
     return this.loginForm.get('phone') as FormControl;
@@ -80,11 +80,31 @@ export class RegisterAsClientComponent {
           this.router.navigate(['login']);
         },
         error: () => {
-          console.log("can't signup");
+          console.log("can't signup", this.loginForm.value);
         },
       });
     } else {
       console.log('Form is invalid. Please fill all the required fields.');
+    }
+  }
+
+  onGovernorateClick(event: any) {
+    const selectedValue = +event.target.value;
+    if (selectedValue) {
+      const selectedGovernorate = this.governorates.find(
+        (g: any) => g.id === selectedValue
+      );
+      if (selectedGovernorate) {
+        this.cities = selectedGovernorate.cities;
+        this.loginForm.patchValue({
+          governorate_id: selectedValue.toString(),
+          city_id: '',
+        });
+        console.log('cities:', this.cities);
+        console.log('Selected governorate:', this.loginForm.value);
+      } else {
+        console.log('Selected governorate not found:', selectedValue);
+      }
     }
   }
 }

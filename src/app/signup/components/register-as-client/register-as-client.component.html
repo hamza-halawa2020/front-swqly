@@ -80,6 +80,7 @@
                 class="form-control"
                 id="governorate_id"
                 formControlName="governorate_id"
+                (change)="onGovernorateClick($event)"
               >
                 <option selected value="" disabled>
                   من فضلك ادخل المحافظة
@@ -114,12 +115,12 @@
               <label for="city" class="form-label"
                 >المدينة<span class="text-danger">*</span></label
               >
-              <select class="form-control" id="city" formControlName="city">
+              <select class="form-control" id="city" formControlName="city_id">
                 <option selected value="" disabled>من فضلك ادخل المدينة</option>
 
-                <option value="beni sueif">beni sueif</option>
-                <option value="cairo">cairo</option>
-                <option value="alex">alex</option>
+                <option *ngFor="let city of cities" value="{{ city.id }}">
+                  {{ city.name }}
+                </option>
               </select>
               <div
                 class="form-text text-success"

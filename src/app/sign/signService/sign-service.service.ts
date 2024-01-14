@@ -26,7 +26,7 @@ export class SignServiceService {
     expirationDate.setDate(expirationDate.getDate() + 1);
     const expirationDateString = expirationDate.toUTCString();
     this.cookieService.set(
-      'auth_token',
+      'token',
       token,
       undefined,
       undefined,
@@ -37,7 +37,7 @@ export class SignServiceService {
   }
 
   getTokenFromCookie(): string {
-    return this.cookieService.get('auth_token');
+    return this.cookieService.get('token');
   }
 
   // setToken(tokenValue: string) {
@@ -54,7 +54,7 @@ export class SignServiceService {
 
   logout() {
     // localStorage.clear();
-    this.cookieService.delete('auth_token');
+    this.cookieService.delete('token');
     this.router.navigate(['']);
   }
 
