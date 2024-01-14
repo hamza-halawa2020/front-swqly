@@ -15,6 +15,9 @@ export class SignupServiceService {
   getGovernorates() {
     return this.http.get(`${this.apiUrl}soqli/governorates`);
   }
+  getshopCategory() {
+    return this.http.get(`${this.apiUrl}soqli/shop_category`);
+  }
   // getcities() {
   //   return this.http.get(`${this.apiUrl}soqli/governorates`);
   // }

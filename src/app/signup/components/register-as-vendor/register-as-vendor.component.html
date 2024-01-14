@@ -83,29 +83,32 @@
               >
               <select
                 class="form-control"
-                id="governorate"
-                formControlName="governorate"
+                id="governorate_id"
+                formControlName="governorate_id"
+                (change)="onGovernorateClick($event)"
               >
                 <option selected value="" disabled>
                   من فضلك ادخل المحافظة
                 </option>
-
-                <option value="beni sueif">beni sueif</option>
-                <option value="cairo">cairo</option>
-                <option value="alex">alex</option>
+                <option
+                  value="{{ governorate.id }}"
+                  *ngFor="let governorate of governorates"
+                >
+                  {{ governorate.name }}
+                </option>
               </select>
               <div
                 class="form-text text-success"
                 *ngIf="
-                  governorate.valid &&
-                  (governorate.touched || governorate.dirty)
+                  governorate_id.valid &&
+                  (governorate_id.touched || governorate_id.dirty)
                 "
               >
                 <i class="fa-solid fa-check"></i>تبدو جيدة!
               </div>
               <div
                 class="form-text text-danger"
-                *ngIf="governorate.errors?.['required'] && (governorate.dirty || governorate.touched)"
+                *ngIf="governorate_id.errors?.['required'] && (governorate_id.dirty || governorate_id.touched)"
               >
                 <i class="fa-solid fa-circle-exclamation"></i>من فضلك ادخل
                 محافظتك.
@@ -116,12 +119,12 @@
               <label for="city" class="form-label"
                 >المدينة<span class="text-danger">*</span></label
               >
-              <select class="form-control" id="city" formControlName="city">
+              <select class="form-control" id="city" formControlName="city_id">
                 <option selected value="" disabled>من فضلك ادخل المدينة</option>
 
-                <option value="beni sueif">beni sueif</option>
-                <option value="cairo">cairo</option>
-                <option value="alex">alex</option>
+                <option *ngFor="let city of cities" value="{{ city.id }}">
+                  {{ city.name }}
+                </option>
               </select>
               <div
                 class="form-text text-success"
@@ -173,27 +176,29 @@
               >
               <select
                 class="form-control"
-                id="shop_categories"
-                formControlName="shop_categories"
+                id="shop_category_id"
+                formControlName="shop_category_id"
               >
                 <option selected value="" disabled>من فضلك ادخل القسم</option>
-
-                <option value="beni sueif">beni sueif</option>
-                <option value="cairo">cairo</option>
-                <option value="alex">alex</option>
+                <option
+                  value="{{ ShopCategory.id }}"
+                  *ngFor="let Shop of ShopCategory"
+                >
+                  {{ Shop.name }}
+                </option>
               </select>
               <div
                 class="form-text text-success"
                 *ngIf="
-                  shop_categories.valid &&
-                  (shop_categories.touched || shop_categories.dirty)
+                  shop_category_id.valid &&
+                  (shop_category_id.touched || shop_category_id.dirty)
                 "
               >
                 <i class="fa-solid fa-check"></i>تبدو جيدة!
               </div>
               <div
                 class="form-text text-danger"
-                *ngIf="shop_categories.errors?.['required'] && (shop_categories.dirty || shop_categories.touched)"
+                *ngIf="shop_category_id.errors?.['required'] && (shop_category_id.dirty || shop_category_id.touched)"
               >
                 <i class="fa-solid fa-circle-exclamation"></i>من فضلك ادخل
                 القسم.

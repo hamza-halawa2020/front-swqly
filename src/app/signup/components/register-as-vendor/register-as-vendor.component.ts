@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SignupServiceService } from '../../signupService/signup-service.service';
 
 @Component({
   selector: 'app-register-as-vendor',
@@ -9,10 +10,18 @@ import { Router } from '@angular/router';
 })
 export class RegisterAsVendorComponent {
   formSubmitted: boolean = false;
-  constructor(private router: Router) {}
-  private auth: any;
+  governorates: any;
+  cities: any;
+  ShopCategory: any;
+  constructor(
+    private router: Router,
+    private registerUser: SignupServiceService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getGovernorates();
+    this.getShopCategory();
+  }
 
   loginForm = new FormGroup({
     email: new FormControl('', [
@@ -20,10 +29,10 @@ export class RegisterAsVendorComponent {
       Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),
     ]),
     full_name: new FormControl('', [Validators.required]),
-    governorate: new FormControl('', [Validators.required]),
-    city: new FormControl('', [Validators.required]),
+    governorate_id: new FormControl('', [Validators.required]),
+    city_id: new FormControl('', [Validators.required]),
     address: new FormControl('', [Validators.required]),
-    shop_categories: new FormControl('', [Validators.required]),
+    shop_category_id: new FormControl('', [Validators.required]),
 
     phone: new FormControl('', [
       Validators.required,
@@ -37,6 +46,7 @@ export class RegisterAsVendorComponent {
       Validators.minLength(6),
       Validators.maxLength(15),
     ]),
+    role: new FormControl('بائع'),
   });
 
   get full_name(): FormControl {
@@ -45,17 +55,17 @@ export class RegisterAsVendorComponent {
   get Email(): FormControl {
     return this.loginForm.get('email') as FormControl;
   }
-  get governorate(): FormControl {
-    return this.loginForm.get('governorate') as FormControl;
+  get governorate_id(): FormControl {
+    return this.loginForm.get('governorate_id') as FormControl;
   }
   get city(): FormControl {
-    return this.loginForm.get('city') as FormControl;
+    return this.loginForm.get('city_id') as FormControl;
   }
   get address(): FormControl {
     return this.loginForm.get('address') as FormControl;
   }
-  get shop_categories(): FormControl {
-    return this.loginForm.get('shop_categories') as FormControl;
+  get shop_category_id(): FormControl {
+    return this.loginForm.get('shop_category_id') as FormControl;
   }
   get phone(): FormControl {
     return this.loginForm.get('phone') as FormControl;
@@ -70,12 +80,55 @@ export class RegisterAsVendorComponent {
     return this.loginForm.get('password') as FormControl;
   }
 
+  getGovernorates() {
+    this.registerUser.getGovernorates().subscribe((data) => {
+      this.governorates = data;
+      console.log('governorates', this.governorates);
+    });
+  }
+  getShopCategory() {
+    this.registerUser.getshopCategory().subscribe((data) => {
+      this.ShopCategory = data;
+      console.log('ShopCategory', this.ShopCategory);
+    });
+  }
+
   loginSubmitted() {
     if (this.loginForm.valid) {
       this.formSubmitted = true;
-      console.log(this.loginForm.value);
+      this.loginForm.patchValue({ role: 'بائع' });
+      this.registerUser.registerUser(this.loginForm.value).subscribe({
+        next: (res: any) => {
+          console.log('success registeration');
+          this.loginForm.reset();
+          this.router.navigate(['login']);
+        },
+        error: () => {
+          console.log("can't signup", this.loginForm.value);
+        },
+      });
     } else {
       console.log('Form is invalid. Please fill all the required fields.');
+    }
+  }
+
+  onGovernorateClick(event: any) {
+    const selectedValue = +event.target.value;
+    if (selectedValue) {
+      const selectedGovernorate = this.governorates.find(
+        (g: any) => g.id === selectedValue
+      );
+      if (selectedGovernorate) {
+        this.cities = selectedGovernorate.cities;
+        this.loginForm.patchValue({
+          governorate_id: selectedValue.toString(),
+          city_id: '',
+        });
+        console.log('cities:', this.cities);
+        console.log('Selected governorate:', this.loginForm.value);
+      } else {
+        console.log('Selected governorate not found:', selectedValue);
+      }
     }
   }
 }
