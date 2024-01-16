@@ -46,7 +46,7 @@ export class RegisterAsVendorComponent {
       Validators.minLength(6),
       Validators.maxLength(15),
     ]),
-    role: new FormControl('بائع'),
+    role: new FormControl('صاحب محل'),
   });
 
   get full_name(): FormControl {
@@ -83,7 +83,7 @@ export class RegisterAsVendorComponent {
   getGovernorates() {
     this.registerUser.getGovernorates().subscribe((data) => {
       this.governorates = data;
-      console.log('governorates', this.governorates);
+      // console.log('governorates', this.governorates);
     });
   }
   getShopCategory() {
@@ -96,7 +96,7 @@ export class RegisterAsVendorComponent {
   loginSubmitted() {
     if (this.loginForm.valid) {
       this.formSubmitted = true;
-      this.loginForm.patchValue({ role: 'بائع' });
+      this.loginForm.patchValue({ role: 'صاحب محل' });
       this.registerUser.registerUser(this.loginForm.value).subscribe({
         next: (res: any) => {
           console.log('success registeration');
@@ -124,8 +124,8 @@ export class RegisterAsVendorComponent {
           governorate_id: selectedValue.toString(),
           city_id: '',
         });
-        console.log('cities:', this.cities);
-        console.log('Selected governorate:', this.loginForm.value);
+        // console.log('cities:', this.cities);
+        // console.log('Selected governorate:', this.loginForm.value);
       } else {
         console.log('Selected governorate not found:', selectedValue);
       }

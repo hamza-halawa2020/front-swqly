@@ -180,10 +180,7 @@
                 formControlName="shop_category_id"
               >
                 <option selected value="" disabled>من فضلك ادخل القسم</option>
-                <option
-                  value="{{ ShopCategory.id }}"
-                  *ngFor="let Shop of ShopCategory"
-                >
+                <option *ngFor="let Shop of ShopCategory" value="{{ Shop.id }}">
                   {{ Shop.name }}
                 </option>
               </select>

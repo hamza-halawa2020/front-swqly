@@ -100,8 +100,8 @@ export class RegisterAsClientComponent {
           governorate_id: selectedValue.toString(),
           city_id: '',
         });
-        console.log('cities:', this.cities);
-        console.log('Selected governorate:', this.loginForm.value);
+        // console.log('cities:', this.cities);
+        // console.log('Selected governorate:', this.loginForm.value);
       } else {
         console.log('Selected governorate not found:', selectedValue);
       }
